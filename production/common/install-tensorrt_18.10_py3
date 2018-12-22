@@ -1,0 +1,26 @@
+#!/bin/sh
+set -e
+
+echo "**** Use Python 3.5 as standard python environment. ****"
+python3 --version
+
+update-alternatives --install /usr/bin/python python /usr/bin/python3.5 3
+update-alternatives --install /usr/bin/python python /usr/bin/python3.5m 2
+
+apt-get update
+/bin/sh -c ./install_jupyter_py3.sh
+/bin/sh -c ./install_ldap_access.sh
+# update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+# update-alternatives --install /usr/bin/python python /usr/bin/python2 2
+update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+/bin/sh -c ./install_entrypoint.sh
+
+# for file in ./install_*.sh
+# do
+# 	/bin/sh -c $file
+# done
+
+apt-get clean all
+
+rm -rf /var/lib/apt/lists/*
+rm -fr /tmp/common

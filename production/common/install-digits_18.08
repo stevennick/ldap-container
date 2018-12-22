@@ -1,0 +1,47 @@
+#!/bin/sh
+set -e
+
+echo "**** Use Python 2.7 as standard python environment. ****"
+python2 --version
+# update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+
+apt-get update
+# Jupyter custom settings 
+# Set up our notebook config.
+mkdir -p /root/.jupyter/
+cp jupyter/jupyter_notebook_config.py /root/.jupyter/
+
+cp jupyter/jupyter_token.py /usr/local/bin
+chmod a+x /usr/local/bin/jupyter_token.py
+
+cp jupyter/jupyter_token /usr/local/bin
+chmod a+x /usr/local/bin/jupyter_token
+
+
+mkdir -p /workspace
+
+# Copy sample notebooks.
+cp -r jupyter/notebooks/* /workspace
+
+chown -R 10000:10000 /workspace
+
+cp jupyter/run_jupyter.sh /
+# Jupyter has issues with being run directly:
+#   https://github.com/ipython/ipython/issues/7062
+# We just add a little wrapper script.
+chmod a+x /run_jupyter.sh
+
+/bin/sh -c ./install_ldap_access.sh
+# update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+# update-alternatives --install /usr/bin/python python /usr/bin/python2 2
+/bin/sh -c ./install_entrypoint.sh
+
+# for file in ./install_*.sh
+# do
+# 	/bin/sh -c $file
+# done
+
+apt-get clean all
+
+rm -rf /var/lib/apt/lists/*
+rm -fr /tmp/common

@@ -1,64 +1,24 @@
-FROM nvcr.io/nvidia/tensorrtserver:18.08-py2
+FROM nvcr.io/nvidia/inferenceserver:18.08-py2
 
-# Install required packages
-RUN apt-get update  && \
-    apt-get install -y sudo && \
-    DEBIAN_FRONTEND=noninteractive apt-get -y install libnss-ldap libpam-ldap ldap-utils nscd && \
-    DEBIAN_FRONTEND=noninteractive apt-get -y install libpam-ldapd && \
-    apt-get install -y openssh-server openssh-client supervisor
+RUN apt-get update && \
+	apt-get install -y python3 python3-pip
 
-COPY init.sh /etc/profile.d/
+RUN mkdir -p /workspace
 
-# Assign slurm as admin(sudo)
-RUN echo "%slurm  ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/slurm      
+COPY . /tmp/common
+RUN cd /tmp/common && ./install
 
-RUN set -xe; \
-    echo "session required pam_mkhomedir.so skel=/etc/skel umask=077" >> /etc/pam.d/common-session; \
-    mkdir -p /var/run/sshd
+# RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.5 1
+# RUN update-alternatives --install /usr/bin/python python /usr/bin/python2.7 2
 
-# Install python's pip package
-RUN python -m pip --version
-RUN python -m pip install -U setuptools
-
-# install jupyter
-RUN python -m pip install jupyter
-RUN jupyter notebook --generate-config --port 8888
-RUN python -m pip install --upgrade pip
-
-# Set up our notebook config.
-COPY jupyter_notebook_config.py /root/.jupyter/
-
-# Copy sample notebooks.
-COPY notebooks /workspace
-RUN ["chmod", "0766", "/workspace"]
-
-# Jupyter has issues with being run directly:
-#   https://github.com/ipython/ipython/issues/7062
-# We just add a little wrapper script.
-COPY run_jupyter.sh /
-RUN ["chmod", "+x", "/run_jupyter.sh"]
-
-# LDAP Config
-COPY ldap-auth-config /etc/auth-client-config/profile.d/ldap-auth-config
-COPY ldap.conf /etc/ldap.conf
-COPY ldap.secret /etc/ldap.secret
-RUN chmod 600 /etc/ldap.secret
-
-COPY pam.d /etc/pam.d
-COPY nslcd.conf /etc/nslcd.conf
-
-RUN /usr/sbin/auth-client-config -t nss -p lac_ldap
-
-COPY entrypoint.sh /entrypoint.sh
-#ENTRYPOINT /bin/sh /entrypoint.sh
+COPY tensorrtserver/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 WORKDIR "/workspace"
 RUN chmod 0777 /workspace
-RUN rm -rf /root/.cache
 
 EXPOSE 22
 
-#TensorRT
+# TensroRT 
 EXPOSE 8000
 EXPOSE 8001
 EXPOSE 8002
@@ -66,5 +26,4 @@ EXPOSE 8002
 # Jupyter
 EXPOSE 8888
 
-ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf 
 ENTRYPOINT ["/usr/bin/supervisord"]

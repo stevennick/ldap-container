@@ -1,0 +1,43 @@
+#!/bin/sh
+set -e
+
+if [ -f "/usr/bin/python3.5" ] ; then
+	python3 --version
+	echo "**** Use Python 3.5 as standard python environment. ****"
+	apt-get update
+	update-alternatives --install /usr/bin/python python /usr/bin/python3.5 1
+	/bin/sh -c ./install_jupyter_py3.sh
+	/bin/sh -c ./install_ldap_access.sh
+	update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+	update-alternatives --install /usr/bin/python python /usr/bin/python3.5 2
+	/bin/sh -c ./install_entrypoint.sh
+elif [ -f "/usr/bin/python2.7" ] ; then
+	echo "**** Use Python 2.7 as standard python environment. ****"
+	python2 --version
+	update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+	apt-get update
+	/bin/sh -c ./install_jupyter_py2.sh
+	/bin/sh -c ./install_ldap_access.sh
+	update-alternatives --install /usr/bin/python python /usr/bin/python3.5 1
+	update-alternatives --install /usr/bin/python python /usr/bin/python2.7 2
+	/bin/sh -c ./install_entrypoint.sh
+else
+	echo "**** Install Python 2.7 as standard python environment. ****"
+	apt-get update
+	apt-get install -y python
+	/bin/sh -c ./install_jupyter_py2.sh
+	/bin/sh -c ./install_ldap_access.sh
+	update-alternatives --install /usr/bin/python python /usr/bin/python3.5 1
+	update-alternatives --install /usr/bin/python python /usr/bin/python2.7 2
+	/bin/sh -c ./install_entrypoint.sh
+fi
+
+# for file in ./install_*.sh
+# do
+# 	/bin/sh -c $file
+# done
+
+apt-get clean all
+
+rm -rf /var/lib/apt/lists/*
+rm -fr /tmp/common

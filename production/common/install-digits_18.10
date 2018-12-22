@@ -1,0 +1,23 @@
+#!/bin/sh
+set -e
+
+echo "**** Use Python 2.7 as standard python environment. ****"
+python2 --version
+# update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+
+apt-get update
+/bin/sh -c ./install_jupyter_py2.sh
+/bin/sh -c ./install_ldap_access.sh
+# update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+# update-alternatives --install /usr/bin/python python /usr/bin/python2 2
+/bin/sh -c ./install_entrypoint.sh
+
+# for file in ./install_*.sh
+# do
+# 	/bin/sh -c $file
+# done
+
+apt-get clean all
+
+rm -rf /var/lib/apt/lists/*
+rm -fr /tmp/common

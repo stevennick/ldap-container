@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo -n $HOSTNAME | md5sum | awk '{print "Jupyter access token: " $1}'
