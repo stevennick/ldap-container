@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ -z "${CREATOR_ACCOUNT}" ] ; then
+  echo "+ : ALL : ALL" > /etc/security/access.conf
+else
+  echo "+ : ${CREATOR_ACCOUNT} : ALL" > /etc/security/access.conf
+  echo "- : ALL : ALL" >> /etc/security/access.conf
+fi
+exit 0;

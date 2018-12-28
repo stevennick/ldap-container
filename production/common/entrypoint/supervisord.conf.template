@@ -1,0 +1,32 @@
+[supervisord]
+nodaemon=true
+
+[program:nscd]
+command=/usr/sbin/service nscd stop
+
+[program:nslcd]
+command=/usr/sbin/service nslcd start
+
+[program:limit_access]
+command=/usr/local/bin/limit_access
+startsecs=0
+autorestart=false
+startretries=1
+
+[program:sshd]
+command=/usr/sbin/sshd -D
+
+[program:jupyter_token]
+user=$user
+command=/usr/local/bin/jupyter_token
+startsecs=0
+autorestart=false
+startretries=1
+
+[program:jupyter]
+directory=/home/$user
+user=$user
+command=sudo -H -u $user /run_jupyter.sh --port=8888 --notebook-dir=/home/$user
+redirect_stderr=true
+stdout_logfile=/dev/stdout
+stdout_logfile_maxbytes=0

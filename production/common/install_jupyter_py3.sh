@@ -24,6 +24,8 @@ rm -fr /root/.cache
 
 # Set up our notebook config.
 cp jupyter/jupyter_notebook_config.py /root/.jupyter/
+mkdir -p /etc/skel/.jupyter/
+cp jupyter/jupyter_notebook_config.py /etc/skel/.jupyter/
 
 cp jupyter/jupyter_token.py /usr/local/bin
 chmod a+x /usr/local/bin/jupyter_token.py
@@ -31,6 +33,8 @@ chmod a+x /usr/local/bin/jupyter_token.py
 cp jupyter/jupyter_token /usr/local/bin
 chmod a+x /usr/local/bin/jupyter_token
 
+cp jupyter/jupyter_init.sh /usr/local/bin
+chmod a+x /usr/local/bin/jupyter_init.sh
 
 mkdir -p /workspace
 

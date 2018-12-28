@@ -8,7 +8,8 @@ RUN cd /tmp/common && ./install-digits_18.08
 
 WORKDIR "/workspace"
 RUN chmod 0777 /workspace
-ADD digits_18.08/supervisord.conf /etc/supervisor/conf.d/supervisord.conf 
+COPY digits_18.08/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY digits_18.08/supervisord.conf.template /etc/supervisor/conf.d/supervisord.conf.template
 
 EXPOSE 22
 EXPOSE 8888

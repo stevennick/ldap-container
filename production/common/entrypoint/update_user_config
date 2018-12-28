@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -z "${CREATOR_ACCOUNT}" ] ; then
+  echo "Update_user_config: No creator account detected, use default instead."
+  sed -e 's/$user/root/g' /etc/supervisor/conf.d/supervisord.conf.template > /etc/supervisor/conf.d/supervisord.conf
+else
+  echo "Update_user_config: Change jupyter and user program to run as ${CREATOR_ACCOUNT}."
+  sed -e "s/\$user/${CREATOR_ACCOUNT}/g" /etc/supervisor/conf.d/supervisord.conf.template > /etc/supervisor/conf.d/supervisord.conf
+fi
+exit 0;

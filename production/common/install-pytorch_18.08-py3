@@ -1,5 +1,8 @@
 #!/bin/sh
 set -e
+# Use mirror protocol
+# sed -i -e 's/http:\/\/us.archive/mirror:\/\/mirrors/' -e 's/\/ubuntu\//\/mirrors.txt/' /etc/apt/sources.list
+# sed -i -e 's/http:\/\/archive/mirror:\/\/mirrors/' -e 's/\/ubuntu\//\/mirrors.txt/' /etc/apt/sources.list
 
 python3 --version
 echo "**** Use Python 3.5 as standard python environment. ****"

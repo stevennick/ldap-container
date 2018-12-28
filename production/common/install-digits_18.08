@@ -1,21 +1,29 @@
 #!/bin/sh
 set -e
+# Use mirror protocol
+#sed -i -e 's/http:\/\/us.archive/mirror:\/\/mirrors/' -e 's/\/ubuntu\//\/mirrors.txt/' /etc/apt/sources.list
+#sed -i -e 's/http:\/\/archive/mirror:\/\/mirrors/' -e 's/\/ubuntu\//\/mirrors.txt/' /etc/apt/sources.list
 
 echo "**** Use Python 2.7 as standard python environment. ****"
 python2 --version
 # update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
 
 apt-get update
-# Jupyter custom settings 
-# Set up our notebook config.
+pip install jupyter --force
 mkdir -p /root/.jupyter/
+# Set up our notebook config.
 cp jupyter/jupyter_notebook_config.py /root/.jupyter/
+mkdir -p /etc/skel/.jupyter/
+cp jupyter/jupyter_notebook_config.py /etc/skel/.jupyter/
 
 cp jupyter/jupyter_token.py /usr/local/bin
 chmod a+x /usr/local/bin/jupyter_token.py
 
 cp jupyter/jupyter_token /usr/local/bin
 chmod a+x /usr/local/bin/jupyter_token
+
+cp jupyter/jupyter_init.sh /usr/local/bin
+chmod a+x /usr/local/bin/jupyter_init.sh
 
 
 mkdir -p /workspace
@@ -30,7 +38,6 @@ cp jupyter/run_jupyter.sh /
 #   https://github.com/ipython/ipython/issues/7062
 # We just add a little wrapper script.
 chmod a+x /run_jupyter.sh
-
 /bin/sh -c ./install_ldap_access.sh
 # update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 # update-alternatives --install /usr/bin/python python /usr/bin/python2 2

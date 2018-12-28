@@ -1,5 +1,8 @@
 #!/bin/sh
 set -e
+# Use mirror protocol
+# sed -i -e 's/http:\/\/us.archive/mirror:\/\/mirrors/' -e 's/\/ubuntu\//\/mirrors.txt/' /etc/apt/sources.list
+# sed -i -e 's/http:\/\/archive/mirror:\/\/mirrors/' -e 's/\/ubuntu\//\/mirrors.txt/' /etc/apt/sources.list
 
 echo "**** Use Python 2.7 as standard python environment. ****"
 python2 --version

@@ -1,5 +1,8 @@
 #!/bin/sh
 set -e
+# Use mirror protocol
+# sed -i -e 's/http:\/\/us.archive/mirror:\/\/mirrors/' -e 's/\/ubuntu\//\/mirrors.txt/' /etc/apt/sources.list
+# sed -i -e 's/http:\/\/archive/mirror:\/\/mirrors/' -e 's/\/ubuntu\//\/mirrors.txt/' /etc/apt/sources.list
 
 echo "**** Use Python 3.5 as standard python environment. ****"
 python3 --version
@@ -14,6 +17,13 @@ apt-get update
 # update-alternatives --install /usr/bin/python python /usr/bin/python2 2
 update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
 /bin/sh -c ./install_entrypoint.sh
+
+cp entrypoint/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+cp entrypoint/supervisord.conf.template /etc/supervisor/conf.d/supervisord.conf.template
+
+# Update system wide ldconfig so trtserver can find libraries
+cp ./tensorrtserver/trtserver.conf /etc/ld.so.conf.d/
+ldconfig
 
 # for file in ./install_*.sh
 # do

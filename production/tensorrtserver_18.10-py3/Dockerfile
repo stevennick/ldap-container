@@ -1,6 +1,6 @@
 FROM nvcr.io/nvidia/tensorrtserver:18.10-py3
 
-RUN mkdir -p /workspace
+RUN mkdir -p /workspace/model-store
 
 COPY . /tmp/common
 RUN cd /tmp/common && ./install
@@ -9,6 +9,11 @@ RUN cd /tmp/common && ./install
 # RUN update-alternatives --install /usr/bin/python python /usr/bin/python2.7 2
 
 COPY tensorrtserver/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY tensorrtserver/supervisord.conf.template /etc/supervisor/conf.d/supervisord.conf.template
+COPY tensorrtserver/create_modelstore /usr/local/bin/
+COPY tensorrtserver/trtserver.conf /etc/ld.so.conf.d/
+RUN chmod a+x /usr/local/bin/create_modelstore
+RUN ldconfig
 
 WORKDIR "/workspace"
 RUN chmod 0777 /workspace
