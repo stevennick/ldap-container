@@ -25,7 +25,6 @@ chmod a+x /usr/local/bin/jupyter_token
 cp jupyter/jupyter_init.sh /usr/local/bin
 chmod a+x /usr/local/bin/jupyter_init.sh
 
-
 mkdir -p /workspace
 
 # Copy sample notebooks.
