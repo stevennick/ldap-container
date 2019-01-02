@@ -39,21 +39,17 @@ echo ============= Build image digits_18.08
 docker build -t registry.twcc.ai/ngc/nvidia/digits-18.08-v1:latest -f ./digits_18.08/Dockerfile common  && \
 docker push registry.twcc.ai/ngc/nvidia/digits-18.08-v1:latest
 
-
 echo ============= Build image digits_18.10
 docker build -t registry.twcc.ai/ngc/nvidia/digits-18.10-v1:latest -f ./digits_18.10/Dockerfile common  && \
 docker push registry.twcc.ai/ngc/nvidia/digits-18.10-v1:latest 
-
 
 echo ============= Build image mxnet_18.08-py2
 docker build -t registry.twcc.ai/ngc/nvidia/mxnet-18.08-py2-v1:latest -f ./mxnet_18.08-py2/Dockerfile common  && \
 docker push registry.twcc.ai/ngc/nvidia/mxnet-18.08-py2-v1:latest 
 
-
 echo ============= Build image mxnet_18.08-py3
 docker build -t registry.twcc.ai/ngc/nvidia/mxnet-18.08-py3-v1:latest -f ./mxnet_18.08-py3/Dockerfile common  && \
 docker push registry.twcc.ai/ngc/nvidia/mxnet-18.08-py3-v1:latest 
-
 
 echo ============= Build image mxnet_18.10-py3
 docker build -t registry.twcc.ai/ngc/nvidia/mxnet-18.10-py3-v1:latest -f ./mxnet_18.10-py3/Dockerfile common  && \
@@ -87,11 +83,9 @@ echo ============= Build image tensorrt_18.08-py2
 docker build -t registry.twcc.ai/ngc/nvidia/tensorrt-18.08-py2-v1:latest -f ./tensorrt_18.08-py2/Dockerfile common  && \
 docker push registry.twcc.ai/ngc/nvidia/tensorrt-18.08-py2-v1:latest 
 
-
 echo ============= Build image tensorrt_18.08-py3
 docker build -t registry.twcc.ai/ngc/nvidia/tensorrt-18.08-py3-v1:latest -f ./tensorrt_18.08-py3/Dockerfile common  && \
 docker push registry.twcc.ai/ngc/nvidia/tensorrt-18.08-py3-v1:latest
-
 
 echo ============= Build image tensorrt_18.10-py2
 docker build -t registry.twcc.ai/ngc/nvidia/tensorrt-18.10-py2-v1:latest -f ./tensorrt_18.10-py2/Dockerfile common  && \

@@ -8,10 +8,10 @@ RUN cd /tmp/common && ./install
 # RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.5 1
 # RUN update-alternatives --install /usr/bin/python python /usr/bin/python2.7 2
 
-COPY tensorrtserver/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-COPY tensorrtserver/supervisord.conf.template /etc/supervisor/conf.d/supervisord.conf.template
-COPY tensorrtserver/create_modelstore /usr/local/bin/
-COPY tensorrtserver/trtserver.conf /etc/ld.so.conf.d/
+COPY inference_server_18.08.1/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY inference_server_18.08.1/supervisord.conf.template /etc/supervisor/conf.d/supervisord.conf.template
+COPY inference_server_18.08.1/create_modelstore /usr/local/bin/
+COPY inference_server_18.08.1/trtserver.conf /etc/ld.so.conf.d/
 RUN chmod a+x /usr/local/bin/create_modelstore
 RUN ldconfig
 
