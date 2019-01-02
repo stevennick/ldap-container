@@ -16,6 +16,12 @@ startretries=1
 [program:sshd]
 command=/usr/sbin/sshd -D
 
+[program:jupyter_init]
+command=/usr/local/bin/jupyter_init.sh
+startsecs=0
+autorestart=false
+startretries=1
+
 [program:jupyter_token]
 user=$user
 command=/usr/local/bin/jupyter_token
