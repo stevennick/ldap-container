@@ -2,25 +2,7 @@
 
 
 ## Image status
-|Repo name|Tag|Nvidia Driver|update date|Production use|
-|:--------|:-:|:-----------:|:---------:|:------------:|
-|caffe|18.08-py2|384.xx|2018/11/07|✔|
-|caffe|18.10-py2|---.--|----/--/--|✖|
-|caffe2|18.08-py2|384.xx|2018/11/07|✔|
-|cntk|18.08-py3|384.xx|2018/11/07|✔|
-|cuda|9.0-cudnn7.1-devel-ubuntu16.04|384.xx|2018/11/07|✔|
-|digits|18.08|384.xx|2018/11/07|✔|
-|digits|18.10|---.--|----/--/--|✖|
-|mxnet|18.08|384.xx|2018/11/07|✔|
-|mxnet|18.10|---.--|----/--/--|✖|
-|pytorch|18.08-py3|384.xx|2018/11/07|✔|
-|pytorch|18.10-py3|---.--|----/--/--|✖|
-|tensorrt|18.08-py3|384.xx|2018/11/07|✔|
-|tensorrt|18.10-py3|---.--|----/--/--|✖|
-|tensorrtserver|18.08-py2|384.xx|2018/11/07|✔|
-|tensorrtserver|18.10-py3|---.--|----/--/--|✖|
-|theano|18.08-py2|384.xx|2018/11/07|✔|
-|torch|18.08-py2|384.xx|2018/11/07|✔|
+See HackMD logs [here](https://hackmd.io/s/S1d8xIigV)
 
 ## Test 
 ### By docker
