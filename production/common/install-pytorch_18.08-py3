@@ -16,6 +16,9 @@ mkdir -p /root/.jupyter/
 cp jupyter/jupyter_notebook_config.py /root/.jupyter/
 # Set up our notebook config.
 mkdir -p /etc/skel/.jupyter/
+mkdir -p /etc/jupyter
+cp jupyter/jupyter_notebook_config.py /etc/jupyter/
+
 cp jupyter/jupyter_notebook_config.py /etc/skel/.jupyter/
 
 cp jupyter/jupyter_token.py /usr/local/bin

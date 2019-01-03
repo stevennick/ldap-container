@@ -3,6 +3,9 @@ FROM nvcr.io/nvidia/pytorch:18.08-py3
 COPY . /tmp/common
 RUN cd /tmp/common && ./install-pytorch_18.08-py3
 
+RUN mkdir -p /etc/jupyter
+COPY jupyter/jupyter_notebook_config.py /etc/jupyter
+
 # RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.5 1
 # RUN update-alternatives --install /usr/bin/python python /usr/bin/python2.7 2
 
