@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ -z "${CREATOR_ACCOUNT}" ] ; then
+  mkdir -p /workspace/model-store
+  export MODEL_STORE=/workspace/model-store
+else
+  mkdir -p /home/${CREATOR_ACCOUNT}/model-store
+  chown -R ${CREATOR_ACCOUNT}:slurm /home/${CREATOR_ACCOUNT}/model-store
+  export MODEL_STORE=/home/${CREATOR_ACCOUNT}/model-store
+fi
+exit 0;

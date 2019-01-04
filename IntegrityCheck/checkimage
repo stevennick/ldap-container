@@ -1,0 +1,203 @@
+echo ======== check image registry.twcc.ai/ngc/nvidia/caffe-18.08-py2-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name caffe registry.twcc.ai/ngc/nvidia/caffe-18.08-py2-v1:latest
+docker cp check.sh caffe:/tmp/
+docker cp IntegrityCheck.md5sum caffe:/tmp/
+docker exec -it caffe /tmp/check.sh
+docker stop caffe
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/caffe-18.10-py2-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name caffe registry.twcc.ai/ngc/nvidia/caffe-18.10-py2-v1:latest
+docker cp check.sh caffe:/tmp/
+docker cp IntegrityCheck.md5sum caffe:/tmp/
+docker exec -it caffe /tmp/check.sh
+docker stop caffe
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/caffe2-18.08-py2-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name caffe2 registry.twcc.ai/ngc/nvidia/caffe2-18.08-py2-v1:latest
+docker cp check.sh caffe2:/tmp/
+docker cp IntegrityCheck.md5sum caffe2:/tmp/
+docker exec -it caffe2 /tmp/check.sh
+docker stop caffe2
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/caffe2-18.08-py3-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name caffe2 registry.twcc.ai/ngc/nvidia/caffe2-18.08-py3-v1:latest
+docker cp check.sh caffe2:/tmp/
+docker cp IntegrityCheck.md5sum caffe2:/tmp/
+docker exec -it caffe2 /tmp/check.sh
+docker stop caffe2
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/cntk-18.08-py3-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name cntk registry.twcc.ai/ngc/nvidia/cntk-18.08-py3-v1:latest
+docker cp check.sh cntk:/tmp/
+docker cp IntegrityCheck.md5sum cntk:/tmp/
+docker exec -it cntk /tmp/check.sh
+docker stop cntk
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/cuda-10.0-cudnn7-devel-ubuntu16.04-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name cuda registry.twcc.ai/ngc/nvidia/cuda-10.0-cudnn7-devel-ubuntu16.04-v1:latest
+docker cp check.sh cuda:/tmp/
+docker cp IntegrityCheck.md5sum cuda:/tmp/
+docker exec -it cuda /tmp/check.sh
+docker stop cuda
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/cuda-9.0-cudnn7.1-devel-ubuntu16.04-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name cuda registry.twcc.ai/ngc/nvidia/cuda-9.0-cudnn7.1-devel-ubuntu16.04-v1:latest
+docker cp check.sh cuda:/tmp/
+docker cp IntegrityCheck.md5sum cuda:/tmp/
+docker exec -it cuda /tmp/check.sh
+docker stop cuda
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/cuda-9.2-cudnn7-devel-ubuntu16.04-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name cuda registry.twcc.ai/ngc/nvidia/cuda-9.2-cudnn7-devel-ubuntu16.04-v1:latest
+docker cp check.sh cuda:/tmp/
+docker cp IntegrityCheck.md5sum cuda:/tmp/
+docker exec -it cuda /tmp/check.sh
+docker stop cuda
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/digits-18.08-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name digits registry.twcc.ai/ngc/nvidia/digits-18.08-v1:latest
+docker cp check.sh digits:/tmp/
+docker cp IntegrityCheck.md5sum digits:/tmp/
+docker exec -it digits /tmp/check.sh
+docker stop digits
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/digits-18.10-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name digits registry.twcc.ai/ngc/nvidia/digits-18.10-v1:latest
+docker cp check.sh digits:/tmp/
+docker cp IntegrityCheck.md5sum digits:/tmp/
+docker exec -it digits /tmp/check.sh
+docker stop digits
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/mxnet-18.08-py2-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name mxnet registry.twcc.ai/ngc/nvidia/mxnet-18.08-py2-v1:latest
+docker cp check.sh mxnet:/tmp/
+docker cp IntegrityCheck.md5sum mxnet:/tmp/
+docker exec -it mxnet /tmp/check.sh
+docker stop mxnet
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/mxnet-18.08-py3-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name mxnet registry.twcc.ai/ngc/nvidia/mxnet-18.08-py3-v1:latest
+docker cp check.sh mxnet:/tmp/
+docker cp IntegrityCheck.md5sum mxnet:/tmp/
+docker exec -it mxnet /tmp/check.sh
+docker stop mxnet
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/mxnet-18.10-py3-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name mxnet registry.twcc.ai/ngc/nvidia/mxnet-18.10-py3-v1:latest
+docker cp check.sh mxnet:/tmp/
+docker cp IntegrityCheck.md5sum mxnet:/tmp/
+docker exec -it mxnet /tmp/check.sh
+docker stop mxnet
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/pytorch-18.08-py3-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name pytorch registry.twcc.ai/ngc/nvidia/pytorch-18.08-py3-v1:latest
+docker cp check.sh pytorch:/tmp/
+docker cp IntegrityCheck.md5sum pytorch:/tmp/
+docker exec -it pytorch /tmp/check.sh
+docker stop pytorch
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/pytorch-18.10-py3-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name pytorch registry.twcc.ai/ngc/nvidia/pytorch-18.10-py3-v1:latest
+docker cp check.sh pytorch:/tmp/
+docker cp IntegrityCheck.md5sum pytorch:/tmp/
+docker exec -it pytorch /tmp/check.sh
+docker stop pytorch
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/tensorflow-18.08-py2-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name tensorflow registry.twcc.ai/ngc/nvidia/tensorflow-18.08-py2-v1:latest
+docker cp check.sh tensorflow:/tmp/
+docker cp IntegrityCheck.md5sum tensorflow:/tmp/
+docker exec -it tensorflow /tmp/check.sh
+docker stop tensorflow
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/tensorflow-18.08-py3-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name tensorflow registry.twcc.ai/ngc/nvidia/tensorflow-18.08-py3-v1:latest
+docker cp check.sh tensorflow:/tmp/
+docker cp IntegrityCheck.md5sum tensorflow:/tmp/
+docker exec -it tensorflow /tmp/check.sh
+docker stop tensorflow
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/tensorflow-18.10-py2-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name tensorflow registry.twcc.ai/ngc/nvidia/tensorflow-18.10-py2-v1:latest
+docker cp check.sh tensorflow:/tmp/
+docker cp IntegrityCheck.md5sum tensorflow:/tmp/
+docker exec -it tensorflow /tmp/check.sh
+docker stop tensorflow
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/tensorflow-18.10-py3-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name tensorflow registry.twcc.ai/ngc/nvidia/tensorflow-18.10-py3-v1:latest
+docker cp check.sh tensorflow:/tmp/
+docker cp IntegrityCheck.md5sum tensorflow:/tmp/
+docker exec -it tensorflow /tmp/check.sh
+docker stop tensorflow
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/tensorrt-18.08-py2-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name tensorrt registry.twcc.ai/ngc/nvidia/tensorrt-18.08-py2-v1:latest
+docker cp check.sh tensorrt:/tmp/
+docker cp IntegrityCheck.md5sum tensorrt:/tmp/
+docker exec -it tensorrt /tmp/check.sh
+docker stop tensorrt
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/tensorrt-18.08-py3-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name tensorrt registry.twcc.ai/ngc/nvidia/tensorrt-18.08-py3-v1:latest
+docker cp check.sh tensorrt:/tmp/
+docker cp IntegrityCheck.md5sum tensorrt:/tmp/
+docker exec -it tensorrt /tmp/check.sh
+docker stop tensorrt
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/tensorrt-18.10-py2-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name tensorrt registry.twcc.ai/ngc/nvidia/tensorrt-18.10-py2-v1:latest
+docker cp check.sh tensorrt:/tmp/
+docker cp IntegrityCheck.md5sum tensorrt:/tmp/
+docker exec -it tensorrt /tmp/check.sh
+docker stop tensorrt
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/tensorrt-18.10-py3-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name tensorrt registry.twcc.ai/ngc/nvidia/tensorrt-18.10-py3-v1:latest
+docker cp check.sh tensorrt:/tmp/
+docker cp IntegrityCheck.md5sum tensorrt:/tmp/
+docker exec -it tensorrt /tmp/check.sh
+docker stop tensorrt
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/tensorrtserver-18.08.1-py2-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name tensorrtserver registry.twcc.ai/ngc/nvidia/tensorrtserver-18.08.1-py2-v1:latest
+docker cp check.sh tensorrtserver:/tmp/
+docker cp IntegrityCheck.md5sum tensorrtserver:/tmp/
+docker exec -it tensorrtserver /tmp/check.sh
+docker stop tensorrtserver
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/tensorrtserver-18.08.1-py3-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name tensorrtserver registry.twcc.ai/ngc/nvidia/tensorrtserver-18.08.1-py3-v1:latest
+docker cp check.sh tensorrtserver:/tmp/
+docker cp IntegrityCheck.md5sum tensorrtserver:/tmp/
+docker exec -it tensorrtserver /tmp/check.sh
+docker stop tensorrtserver
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/tensorrtserver-18.10-py3-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name tensorrtserver registry.twcc.ai/ngc/nvidia/tensorrtserver-18.10-py3-v1:latest
+docker cp check.sh tensorrtserver:/tmp/
+docker cp IntegrityCheck.md5sum tensorrtserver:/tmp/
+docker exec -it tensorrtserver /tmp/check.sh
+docker stop tensorrtserver
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/theano-18.08-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name theano registry.twcc.ai/ngc/nvidia/theano-18.08-v1:latest
+docker cp check.sh theano:/tmp/
+docker cp IntegrityCheck.md5sum theano:/tmp/
+docker exec -it theano /tmp/check.sh
+docker stop theano
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/torch-18.08-py2-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name torch registry.twcc.ai/ngc/nvidia/torch-18.08-py2-v1:latest
+docker cp check.sh torch:/tmp/
+docker cp IntegrityCheck.md5sum torch:/tmp/
+docker exec -it torch /tmp/check.sh
+docker stop torch
+
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/ubuntu-v1:latest
+docker run -it --rm --entrypoint /bin/bash -d --name ubuntu registry.twcc.ai/ngc/nvidia/ubuntu-v1:latest
+docker cp check.sh ubuntu:/tmp/
+docker cp IntegrityCheck.md5sum ubuntu:/tmp/
+docker exec -it ubuntu /tmp/check.sh
+docker stop ubuntu
