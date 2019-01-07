@@ -26,6 +26,8 @@ rm -fr /root/.cache
 cp jupyter/jupyter_notebook_config.py /root/.jupyter/
 mkdir -p /etc/skel/.jupyter/
 cp jupyter/jupyter_notebook_config.py /etc/skel/.jupyter/
+mkdir -p /etc/jupyter/
+cp jupyter/jupyter_notebook_config.py /etc/jupyter/
 
 cp jupyter/jupyter_token.py /usr/local/bin
 chmod a+x /usr/local/bin/jupyter_token.py

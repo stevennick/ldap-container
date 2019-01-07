@@ -4,6 +4,9 @@ set -e
 # Install sshd
 apt-get install -y openssh-server openssh-client sudo
 mkdir -p /var/run/sshd
+echo "ClientAliveInterval 60" >> /etc/ssh/sshd_config
+echo "ClientAliveCountMax 60" >> /etc/ssh/sshd_config
+
 
 # Install ldap access
 DEBIAN_FRONTEND=noninteractive apt-get install -y libnss-ldap libpam-ldapd auth-client-config ldap-utils nscd nslcd
