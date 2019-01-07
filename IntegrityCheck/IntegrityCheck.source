@@ -1,5 +1,6 @@
 /root/.jupyter/jupyter_notebook_config.py
 /etc/skel/.jupyter/jupyter_notebook_config.py
+/etc/jupyter/jupyter_notebook_config.py
 /usr/local/bin/jupyter_token.py
 /usr/local/bin/jupyter_token
 /usr/local/bin/jupyter_init.sh
@@ -21,3 +22,4 @@
 /etc/profile.d/init.sh
 /entrypoint.sh
 /usr/local/bin/update_user_config
+/etc/ssh/sshd_config

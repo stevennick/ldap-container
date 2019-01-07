@@ -1,0 +1,15 @@
+#!/bin/bash
+
+TIMESTAMP=`date +%s`
+
+echo ======== Check image $1
+echo ======== Created with container ID ${TIMESTAMP}
+docker run -it --rm --entrypoint /bin/bash -d --name ${TIMESTAMP} $1
+docker cp check.sh ${TIMESTAMP}:/tmp/
+docker cp IntegrityCheck.md5sum ${TIMESTAMP}:/tmp/
+docker exec -it ${TIMESTAMP} /tmp/check.sh > /tmp/${TIMESTAMP}_check.log
+docker stop ${TIMESTAMP}
+echo ======== Problem list for $1
+cat /tmp/${TIMESTAMP}_check.log | grep -v ': OK'
+echo ======== Problem list for $1
+rm -f /tmp/${TIMESTAMP}_check.log

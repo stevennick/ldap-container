@@ -1,0 +1,87 @@
+echo ======== check image registry.twcc.ai/ngc/nvidia/caffe-18.08-py2-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/caffe-18.08-py2-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/caffe-18.10-py2-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/caffe-18.10-py2-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/caffe2-18.08-py2-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/caffe2-18.08-py2-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/caffe2-18.08-py3-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/caffe2-18.08-py3-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/cntk-18.08-py3-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/cntk-18.08-py3-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/cuda-10.0-cudnn7-devel-ubuntu16.04-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/cuda-10.0-cudnn7-devel-ubuntu16.04-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/cuda-9.0-cudnn7.1-devel-ubuntu16.04-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/cuda-9.0-cudnn7.1-devel-ubuntu16.04-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/cuda-9.2-cudnn7-devel-ubuntu16.04-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/cuda-9.2-cudnn7-devel-ubuntu16.04-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/digits-18.08-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/digits-18.08-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/digits-18.10-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/digits-18.10-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/mxnet-18.08-py2-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/mxnet-18.08-py2-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/mxnet-18.08-py3-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/mxnet-18.08-py3-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/mxnet-18.10-py3-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/mxnet-18.10-py3-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/pytorch-18.08-py3-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/pytorch-18.08-py3-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/pytorch-18.10-py3-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/pytorch-18.10-py3-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/tensorflow-18.08-py2-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/tensorflow-18.08-py2-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/tensorflow-18.08-py3-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/tensorflow-18.08-py3-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/tensorflow-18.10-py2-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/tensorflow-18.10-py2-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/tensorflow-18.10-py3-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/tensorflow-18.10-py3-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/tensorrt-18.08-py2-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/tensorrt-18.08-py2-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/tensorrt-18.08-py3-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/tensorrt-18.08-py3-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/tensorrt-18.10-py2-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/tensorrt-18.10-py2-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/tensorrt-18.10-py3-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/tensorrt-18.10-py3-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/tensorrtserver-18.08.1-py2-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/tensorrtserver-18.08.1-py2-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/tensorrtserver-18.08.1-py3-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/tensorrtserver-18.08.1-py3-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/tensorrtserver-18.10-py3-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/tensorrtserver-18.10-py3-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/theano-18.08-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/theano-18.08-v1:latest
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/torch-18.08-py2-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/torch-18.08-py2-v1:latest
+
+
+echo ======== check image registry.twcc.ai/ngc/nvidia/ubuntu-v1:latest
+./checkImage registry.twcc.ai/ngc/nvidia/ubuntu-v1:latest

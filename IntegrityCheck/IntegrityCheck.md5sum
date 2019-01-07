@@ -1,5 +1,6 @@
 4332a51b57b57b712243b0f107159b7d  /root/.jupyter/jupyter_notebook_config.py
 4332a51b57b57b712243b0f107159b7d  /etc/skel/.jupyter/jupyter_notebook_config.py
+4332a51b57b57b712243b0f107159b7d  /etc/jupyter/jupyter_notebook_config.py
 72abe6bbfc9920ef405d1841ad6e85f3  /usr/local/bin/jupyter_token.py
 8204758d1c95d9021c96009f74c05f7f  /usr/local/bin/jupyter_token
 27f526195c50d7af897aab216e8fe98c  /usr/local/bin/jupyter_init.sh
@@ -21,3 +22,4 @@ fdb5d30a9f2a93278aa570ce353bf4d2  /usr/bin/supervisorctl
 ca5136db543d0902cee69867a874cc36  /etc/profile.d/init.sh
 08fcd454a6c2f02141723cdd1aefee44  /entrypoint.sh
 34892dc67a47088a1df585535db7f991  /usr/local/bin/update_user_config
+d2af2bec05c9bdb35529b4f081b4b2a5  /etc/ssh/sshd_config
