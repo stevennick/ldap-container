@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ldap-svc
-        image: ubuntu:ldap
+        image: registry.twcc.ai/ngc/nvidia/ubuntu-v1:latest
         command: ["/bin/sh", "-c"]
         args: ["set -xe; service nscd restart; service ssh restart; su sthost01;sleep 2147483647"]
         ports:
